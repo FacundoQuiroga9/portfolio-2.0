@@ -11,6 +11,9 @@
 /.env*
 !/.env*.erb
 
+# Ignore dotenv environment variables file.
+.env
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*

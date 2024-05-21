@@ -25,6 +25,7 @@
 body{
   background: linear-gradient(180deg, rgba(23,12,24,1) 44%, rgba(133,71,155,1) 87%, rgba(217,113,240,1) 100%);
   color: white;
+  min-height: 100vh;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -34,7 +35,7 @@ h1, h2, h3, h4, h5, h6{
 p{
   font-family: "Prompt", sans-serif;
   color: rgb(255, 255, 255);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
 }
 
 .home_page{

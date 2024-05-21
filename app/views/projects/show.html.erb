@@ -1,2 +1,27 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <h1><%= @project.title %></h1>
+      <p><%= @project.content %></p>
+
+      <% if @project.image.attached? %>
+        <div class="project-image">
+          <%= image_tag @project.image %>
+        </div>
+      <% end %>
+
+      <p>
+        <strong>Technology:</strong> <%= @project.technology.name %>
+      </p>
+
+      <% if admin? %>
+        <div class="admin-actions">
+          <%= link_to 'Edit', edit_admin_project_path(@project), class: 'btn btn-primary' %>
+          <%= link_to 'Delete', admin_project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        </div>
+      <% end %>
+
+      <%= link_to 'Back to Projects', projects_path, class: 'btn btn-secondary' %>
+    </div>
+  </div>
+</div>
