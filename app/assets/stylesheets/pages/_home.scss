@@ -1,0 +1,60 @@
+.react-logo{
+  width: 4rem;
+  fill: #61dafb;
+  margin: 0 .5rem;
+}
+
+.rails-logo .st0{
+  fill:#CC0000
+}
+
+.rails-logo{
+  width: 6rem;
+  margin: 0 .5rem;
+}
+
+.user-icon{
+  fill: #d971ff;
+  width: 3rem;
+  margin: 0 .5rem;
+}
+
+.social-media-icon{
+  color: #d971ff;
+  margin: 0 .5rem;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.social-media-icon:hover{
+  color: white;
+}
+
+
+.home-page.index {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.home-page.index .container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.btn-fq{
+  border: 1px solid #d971ff;
+  color:  #d971ff;
+  padding: .5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.btn-fq:hover{
+  border: 1px solid white;
+  color:  white;
+}
