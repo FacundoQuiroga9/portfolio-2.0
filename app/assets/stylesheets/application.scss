@@ -28,6 +28,15 @@ body{
   min-height: 100vh;
 }
 
+body.react-bg {
+  background: linear-gradient(180deg, rgba(40,44,52,1) 0%, rgba(16,161,187,1) 65%, rgba(97,218,251,1) 95%);
+}
+
+body.rails-bg {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(250,137,137,1) 65%, rgba(204,0,0,1) 95%);
+}
+
+
 h1, h2, h3, h4, h5, h6{
   font-family: "Prompt", sans-serif;
   font-weight: 500;

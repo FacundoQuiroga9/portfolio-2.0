@@ -53,3 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
   attachCardEventListeners(); // Attach event listeners on initial load if there are project cards
 });
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelector('.react-logo').addEventListener('click', function() {
+    document.body.classList.remove('rails-bg');
+    document.body.classList.add('react-bg');
+  });
+
+  document.querySelector('.rails-logo').addEventListener('click', function() {
+    document.body.classList.remove('react-bg');
+    document.body.classList.add('rails-bg');
+  });
+
+  document.querySelector('.user-icon').addEventListener('click', function() {
+    document.body.classList.remove('react-bg');
+    document.body.classList.remove('rails-bg');
+  });
+});
