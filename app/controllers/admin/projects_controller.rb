@@ -30,7 +30,7 @@ class Admin::ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    redirect_to projects_url, notice: 'Project was successfully destroyed.'
+    redirect_to root_path, notice: 'Project was successfully destroyed.'
   end
 
   private
@@ -40,6 +40,6 @@ class Admin::ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :content, :technology_id)
+    params.require(:project).permit(:title, :content, :technology_id, :image)
   end
 end

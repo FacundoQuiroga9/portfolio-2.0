@@ -17,8 +17,11 @@
       <% if admin? %>
         <div class="admin-actions">
           <%= link_to 'Edit', edit_admin_project_path(@project), class: 'btn btn-primary' %>
-          <%= link_to 'Delete', admin_project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-        </div>
+          <%= link_to "Delete",
+            admin_project_path(@project),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class: "btn btn-danger"
+          %>
       <% end %>
 
       <%= link_to 'Back to Projects', projects_path, class: 'btn btn-secondary' %>

@@ -6,7 +6,16 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @project
+  end
+
+  def react
+    @projects = Project.joins(:technology).where(technologies: { name: 'React' })
+    render partial: 'projects/react_projects', locals: { projects: @projects }
+  end
+
+  def rails
+    @projects = Project.joins(:technology).where(technologies: { name: 'Ruby on Rails' })
+    render partial: 'projects/rails_projects', locals: { projects: @projects }
   end
 
   private
@@ -14,5 +23,4 @@ class ProjectsController < ApplicationController
   def set_project
     @project = Project.find(params[:id])
   end
-
 end
