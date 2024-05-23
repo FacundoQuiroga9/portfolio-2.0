@@ -2,6 +2,26 @@
   width: 4rem;
   fill: #61dafb;
   margin: 0 .5rem;
+  transition: transform 0.2s;
+  &:hover {
+    filter: drop-shadow(0 0 5px #61dafb);
+    animation: rotate 3.5s linear infinite, neon-glow infinite alternate;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes neon-glow {
+  0% {
+    filter: drop-shadow(0 0 2px #61dafb);
+  }
 }
 
 .rails-logo .st0{
@@ -13,14 +33,69 @@
   margin: 0 .5rem;
 }
 
+
+.rails-logo path.rails-drawing {
+  transition: transform 0.5s ease-in-out;
+}
+
+.rails-logo path.rails-text {
+  transition: transform 0.5s ease-in-out;
+}
+
+.rails-logo:hover path.rails-drawing {
+  animation: grow-shrink 1s infinite;
+}
+
+.rails-logo:hover path.rails-text {
+  animation: shrink-grow 1s infinite;
+}
+
+@keyframes grow-shrink {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes shrink-grow {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.8);
+  }
+}
+
 .user-icon{
-  fill: #d971ff;
-  width: 3rem;
+  fill: #ffffff;
+  width: 4rem;
   margin: 0 .5rem;
+  transition: transform 0.4s;
+  &:hover {
+    animation: rotate-slightly 1.5s infinite;
+  }
+}
+
+@keyframes rotate-slightly {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-37deg); /* Cambia el valor según tus preferencias */
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.user-icon:hover, .react-logo:hover, .rails-logo:hover{
+  cursor: pointer;
 }
 
 .social-media-icon{
-  color: #d971ff;
+  color: #170c18;
   margin: 0 .5rem;
   text-decoration: none;
   font-size: 2rem;
@@ -65,6 +140,12 @@
 .project-card {
   max-width: 300px;
   margin: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; // Agrega transición suave
+
+  &:hover {
+    transform: scale(1.05); // Agranda la card
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); // Agrega sombra
+  }
   a{
     text-decoration: none;
   }
@@ -78,7 +159,7 @@
     color: #61dafb;
   }
   .rails{
-    background-color: #ffffff;
+    background-color: rgb(223, 190, 190);
     color: #CC0000;
   }
 }
