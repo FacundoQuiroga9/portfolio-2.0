@@ -1,15 +1,31 @@
 <div class="row">
   <% projects.each do |project| %>
     <div class="col-md-4 mb-4">
-      <div class="card card-react project-card h-100" data-project-id="<%= project.id %>">
-        <%= link_to project_path(project) do %>
-          <% if project.image.attached? %>
-            <%= image_tag project.image.variant(resize_to_fit: [300, 200]), class: 'card-img-top' %>
-          <% end %>
-          <div class="card-body react text-center">
-            <h5 class="card-title"><%= project.title %></h5>
+      <div class="card card-react project-card h-100 position-relative">
+        <% if admin? %>
+          <div class="d-flex justify-content-between p-1">
+            <%= link_to 'Edit', edit_admin_project_path(project) %>
+            <%= link_to 'Delete', admin_project_path(project), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>
           </div>
         <% end %>
+        <% if project.image.attached? %>
+          <%= image_tag project.image.variant(resize_to_fit: [300, 200]), class: 'card-img-top' %>
+        <% end %>
+        <div class="card-body react text-center">
+          <h5 class="card-title"><%= project.title %></h5>
+          <div class="card-buttons mt-3">
+            <% if project.github_url.present? %>
+              <a href="<%= project.github_url %>" target="_blank" class="react-project-link">
+                <i class="fab fa-github"></i>
+              </a>
+            <% end %>
+            <% if project.website_url.present? %>
+              <a href="<%= project.website_url %>" target="_blank" class="react-project-link">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>

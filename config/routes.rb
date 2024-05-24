@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-  resources :projects, only: [:index, :show] do
+  resources :projects, only: [] do
     collection do
       get 'react'
       get 'rails'
@@ -18,4 +18,8 @@ Rails.application.routes.draw do
   get 'profile_info', to: 'home#profile_info'
 
   get "up" => "rails/health#show", as: :rails_health_check
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#create'
+  delete 'logout', to: 'sessions#destroy'
 end

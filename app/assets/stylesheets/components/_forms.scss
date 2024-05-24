@@ -1,0 +1,28 @@
+.custom-card {
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro con transparencia */
+  border: none;
+}
+
+.form-label {
+  color: white; /* Texto de las etiquetas en blanco */
+}
+
+.custom-input {
+  background: rgba(0, 0, 0, 0.3); /* Fondo de los inputs con transparencia */
+  color: white; /* Texto de los inputs en blanco */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Bordes blancos con transparencia */
+}
+
+.custom-input::placeholder {
+  color: rgba(255, 255, 255, 0.7); /* Texto del placeholder en blanco con transparencia */
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}

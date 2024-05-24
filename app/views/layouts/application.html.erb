@@ -16,6 +16,10 @@
   </head>
 
   <body class="<%= controller.controller_name %>-page <%= action_name %>">
+   <% if admin? %>
+      <%= link_to 'Logout', logout_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    <% end %>
+
     <%= yield %>
 
     <footer class="text-center footer">

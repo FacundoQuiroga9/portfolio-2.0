@@ -171,3 +171,30 @@
 .card-rails{
   border: 2px solid #CC0000;
 }
+
+
+.rails-project-link{
+  color:#CC0000;
+  margin: 0 .5rem;
+}
+
+.rails-project-link:hover{
+  color:#960000;
+}
+
+.rails-project-link > i{
+  font-size: 1.5rem;
+}
+
+.react-project-link{
+  color: #61dafb;
+  margin: 0 .5rem;
+}
+
+.react-project-link:hover{
+  color: #ffffff;
+}
+
+.react-project-link > i{
+  font-size: 1.5rem;
+}

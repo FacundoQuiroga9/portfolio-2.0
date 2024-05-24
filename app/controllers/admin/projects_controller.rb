@@ -1,5 +1,5 @@
 class Admin::ProjectsController < ApplicationController
-  before_action :authenticate
+  before_action :authenticate_admin, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @project = Project.new
@@ -8,7 +8,7 @@ class Admin::ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      redirect_to @project, notice: 'Project was successfully created.'
+      redirect_to root_path, notice: 'Project was successfully created.'
     else
       render :new
     end
@@ -21,7 +21,7 @@ class Admin::ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
-      redirect_to @project, notice: 'Project was successfully updated.'
+      redirect_to root_path, notice: 'Project was successfully updated.'
     else
       render :edit
     end
@@ -35,11 +35,13 @@ class Admin::ProjectsController < ApplicationController
 
   private
 
-  def authenticate
-    # Your authentication logic here
+  def authenticate_admin
+    unless session[:admin]
+      redirect_to login_path, alert: "Please log in to continue"
+    end
   end
 
   def project_params
-    params.require(:project).permit(:title, :content, :technology_id, :image)
+    params.require(:project).permit(:title, :content, :technology_id, :image, :github_url, :website_url)
   end
 end

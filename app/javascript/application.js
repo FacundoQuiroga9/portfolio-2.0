@@ -2,7 +2,6 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const profileButton = document.querySelector('.user-icon');
   const reactButton = document.querySelector('.react-logo');
@@ -42,18 +41,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function attachCardEventListeners() {
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach(card => {
-      card.addEventListener('click', () => {
-        const projectId = card.getAttribute('data-project-id');
-        window.location.href = `/projects/${projectId}`;
+    const editButtons = document.querySelectorAll('.edit-project-btn');
+    editButtons.forEach(button => {
+      button.addEventListener('click', (event) => {
+        event.stopPropagation(); // Prevent the event from bubbling up to the card
       });
     });
   }
 
   attachCardEventListeners(); // Attach event listeners on initial load if there are project cards
 });
-
 
 document.addEventListener("DOMContentLoaded", function() {
   document.querySelector('.react-logo').addEventListener('click', function() {
