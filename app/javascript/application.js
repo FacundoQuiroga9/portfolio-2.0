@@ -2,12 +2,14 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 
-document.addEventListener('DOMContentLoaded', () => {
+// Función que envuelve toda la lógica de adjuntar eventos
+function attachEventListeners() {
   const profileButton = document.querySelector('.user-icon');
   const reactButton = document.querySelector('.react-logo');
   const railsButton = document.querySelector('.rails-logo');
   const profileInfo = document.getElementById('profile-info');
 
+  // Eventos de los botones de perfil, React y Rails
   if (profileButton) {
     profileButton.addEventListener('click', () => {
       fetch('/profile_info')
@@ -40,19 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Eventos de los botones de editar en las cards
   function attachCardEventListeners() {
     const editButtons = document.querySelectorAll('.edit-project-btn');
     editButtons.forEach(button => {
       button.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevent the event from bubbling up to the card
+        event.stopPropagation(); // Previene que el evento se propague a la card
       });
     });
   }
 
-  attachCardEventListeners(); // Attach event listeners on initial load if there are project cards
-});
+  attachCardEventListeners(); // Adjunta los eventos de las cards en la carga inicial
 
-document.addEventListener("DOMContentLoaded", function() {
+  // Eventos para cambiar el fondo
   document.querySelector('.react-logo').addEventListener('click', function() {
     document.body.classList.remove('rails-bg');
     document.body.classList.add('react-bg');
@@ -67,4 +69,10 @@ document.addEventListener("DOMContentLoaded", function() {
     document.body.classList.remove('react-bg');
     document.body.classList.remove('rails-bg');
   });
-});
+}
+
+// Llama a la función en la carga inicial de la página
+document.addEventListener('DOMContentLoaded', attachEventListeners);
+
+// Re-adjunta los eventos después de una navegación con Turbo
+document.addEventListener('turbo:load', attachEventListeners);
