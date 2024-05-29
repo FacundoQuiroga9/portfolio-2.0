@@ -9,7 +9,6 @@ gem "rails", "~> 7.1.3", ">= 7.1.3.3"
 gem "sprockets-rails"
 
 # Use sqlite3 as the database for Active Record
-gem "sqlite3", "~> 1.4"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
@@ -49,6 +48,15 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ]
 end
 
+group :development, :test do
+  gem 'sqlite3', '~> 1.4'
+end
+
+# Use pg (PostgreSQL) in production
+group :production do
+  gem 'pg', '~> 1.1'
+end
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
@@ -72,4 +80,3 @@ gem 'font-awesome-sass', '~> 5.15'
 gem "bootstrap", "~> 5.1.3"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'image_processing', '~> 1.2'
-
