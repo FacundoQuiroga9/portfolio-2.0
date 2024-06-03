@@ -80,3 +80,7 @@ gem 'font-awesome-sass', '~> 5.15'
 gem "bootstrap", "~> 5.1.3"
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'image_processing', '~> 1.2'
+
+gem 'cloudinary', '~> 1.18.0'
+gem 'activestorage-cloudinary-service', '~> 0.2.3'
+
