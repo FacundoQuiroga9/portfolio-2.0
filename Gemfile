@@ -84,3 +84,4 @@ gem 'image_processing', '~> 1.2'
 gem 'cloudinary', '~> 1.18.0'
 gem 'activestorage-cloudinary-service', '~> 0.2.3'
 
+gem 'open-uri'
