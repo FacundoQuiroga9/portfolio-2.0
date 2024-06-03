@@ -22,7 +22,7 @@ Project.create!(
   technology: ror,
   github_url: 'https://github.com/FacundoQuiroga9/blog',
   website_url: '',
-  image: { io: URI.open('https://res.cloudinary.com/dhobfoyaf/image/upload/v1717437913/heir7d3357miye0bh3ie364s8wtj.png'), filename: 'olsc_bsas.jpg' }
+  image: { io: URI.open('https://res.cloudinary.com/dhobfoyaf/image/upload/v1717440779/olsc_xplvgp.png'), filename: 'olsc_bsas.jpg' }
 )
 
 Project.create!(
