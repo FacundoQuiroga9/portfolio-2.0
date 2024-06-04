@@ -95,14 +95,14 @@
 }
 
 .social-media-icon{
-  color: #170c18;
+  color: #ffffff;
   margin: 0 .5rem;
   text-decoration: none;
   font-size: 2rem;
 }
 
 .social-media-icon:hover{
-  color: white;
+  color: rgb(193, 193, 193);
 }
 
 
@@ -197,4 +197,28 @@
 
 .react-project-link > i{
   font-size: 1.5rem;
+}
+
+@media (min-width: 576px) {
+  .social-media-icon{
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .social-media-icon{
+    font-size: 1.5rem;
+  }
+  .project-card{
+    width: 200px;
+  }
+}
+
+@media (min-width: 992px) {
+  .social-media-icon{
+    font-size: 2rem;
+  }
+  .project-card{
+    width: 250px;
+  }
 }
