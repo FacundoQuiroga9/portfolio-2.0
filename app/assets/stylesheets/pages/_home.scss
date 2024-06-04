@@ -135,6 +135,7 @@
 }
 
 
+
 // Estilos cards
 
 .project-card {
@@ -210,7 +211,15 @@
     font-size: 1.5rem;
   }
   .project-card{
-    width: 200px;
+    width: 220px;
+  }
+
+  .card-title{
+    font-size: 1rem;
+  }
+
+  .profile-text{
+    font-size: 1rem;
   }
 }
 
@@ -220,5 +229,11 @@
   }
   .project-card{
     width: 250px;
+  }
+  .card-title{
+    font-size: 1.5rem;
+  }
+  .profile-text{
+    font-size: 1.4rem;
   }
 }
